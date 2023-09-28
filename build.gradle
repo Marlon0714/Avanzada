@@ -6,7 +6,7 @@ plugins {
 
 group = 'co.edu.uniquindio.proyecto'
 version = '1.0-SNAPSHOT'
-description 'Breve descripcion del proyecto'
+description 'Proyecto clinica de programacion avanzada'
 sourceCompatibility = JavaVersion.VERSION_17
 
 
@@ -21,12 +21,17 @@ repositories {
 }
 
 dependencies {
+    // Dependencias de Spring Boot
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'mysql:mysql-connector-java'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    // Dependencias de Lombok
     compileOnly 'org.projectlombok:lombok:'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // Dependencias de pruebas
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

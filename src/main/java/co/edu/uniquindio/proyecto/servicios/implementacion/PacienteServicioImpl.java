@@ -1,0 +1,12 @@
+package co.edu.uniquindio.proyecto.servicios.implementacion;
+
+import co.edu.uniquindio.proyecto.modelo.entidades.Paciente;
+import co.edu.uniquindio.proyecto.servicios.interfaces.PacienteServicio;
+
+public class PacienteServicioImpl implements PacienteServicio {
+    //Contrato de los servicios del paciente
+    boolean registrarPaciente(Paciente paciente) throws Exception;
+    boolean actualizarPaciente(Paciente paciente) throws Exception;
+    void eliminarPaciente(String id) throws Exception;
+    Paciente obtenerPaciente(String id) throws Exception;
+}

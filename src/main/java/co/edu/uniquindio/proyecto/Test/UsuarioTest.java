@@ -1,7 +1,7 @@
 package co.edu.uniquindio.proyecto.Test;
 
 import co.edu.uniquindio.proyecto.modelo.entidades.*;
-import co.edu.uniquindio.proyecto.modelo.repositorios.UsuarioRepo;
+import co.edu.uniquindio.proyecto.repositorios.UsuarioRepo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

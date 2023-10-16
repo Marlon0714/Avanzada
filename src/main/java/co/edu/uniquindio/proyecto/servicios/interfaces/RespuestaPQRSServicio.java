@@ -6,6 +6,6 @@ public interface RespuestaPQRSServicio {
     //Contrato de los servicios de RespuestaPQRS
     boolean registrarRespuestaPQRS(RespuestaPQRS respuestaPQRS) throws Exception;
     boolean actualizarRespuestaPQRS(RespuestaPQRS respuestaPQRS) throws Exception;
-    void eliminarRespuestaPQRS(String id) throws Exception;
-    RespuestaPQRS obtenerRespuestaPQRS(String id) throws Exception;
+    void eliminarRespuestaPQRS(Long id) throws Exception;
+    RespuestaPQRS obtenerRespuestaPQRS(Long id) throws Exception;
 }

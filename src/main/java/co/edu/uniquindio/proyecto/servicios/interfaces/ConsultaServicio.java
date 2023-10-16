@@ -6,6 +6,6 @@ public interface ConsultaServicio {
     //Contrato de los servicios de consulta
     boolean registrarConsulta(Consulta consulta) throws Exception;
     boolean actualizarConsulta(Consulta consulta) throws Exception;
-    void eliminarConsulta(String id) throws Exception;
-    Consulta obtenerConsulta(String id) throws Exception;
+    void eliminarConsulta(Long id) throws Exception;
+    Consulta obtenerConsulta(Long id) throws Exception;
 }

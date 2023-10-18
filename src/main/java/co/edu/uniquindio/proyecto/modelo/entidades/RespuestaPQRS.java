@@ -1,6 +1,8 @@
 package co.edu.uniquindio.proyecto.modelo.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
@@ -22,7 +24,9 @@ public class RespuestaPQRS implements Serializable {
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
-    @Size(min = 1, max = 10)
+    //@Size(min = 1, max = 10)
+    @Min(value = 1, message = "El mínimo es 1")
+    @Max(value = 10, message = "El máximo es 10")
     @Column(name = "id_repuesta",length = 10, unique = true)
     private Long idRespuesta;
 

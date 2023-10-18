@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class PQRSServicioImpl implements PQRSServicio {
@@ -43,5 +45,10 @@ public class PQRSServicioImpl implements PQRSServicio {
     @Override
     public PQRS obtenerPQRS(Long id) throws Exception{
         return pqrsRepo.findById(id).orElseThrow(()-> new Exception("No existe una PQRS con el id dado"));
+    }
+
+    @Override
+    public List<PQRS> listarPQRS() {
+        return pqrsRepo.findAll();
     }
 }

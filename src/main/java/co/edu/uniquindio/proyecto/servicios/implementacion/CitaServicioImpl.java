@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class CitaServicioImpl implements CitaServicio {
@@ -45,5 +47,10 @@ public class CitaServicioImpl implements CitaServicio {
     @Override
     public Cita obtenerCita(Long id) throws Exception{
         return citaRepo.findById(id).orElseThrow(()-> new Exception("No existe una cita con el id dado"));
+    }
+
+    @Override
+    public List<Cita> listarCitas() {
+        return citaRepo.findAll();
     }
 }

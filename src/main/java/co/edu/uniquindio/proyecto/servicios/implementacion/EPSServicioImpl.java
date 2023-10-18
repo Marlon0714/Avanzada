@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class EPSServicioImpl implements EPSServicio {
@@ -52,5 +54,10 @@ public class EPSServicioImpl implements EPSServicio {
     @Override
     public EPS obtenerEPS(String id) throws Exception{
         return epsServicio.findById(id).orElseThrow(()-> new Exception("No existe una EPS con el id dado"));
+    }
+
+    @Override
+    public List<EPS> listarEPS() {
+        return epsServicio.findAll();
     }
 }

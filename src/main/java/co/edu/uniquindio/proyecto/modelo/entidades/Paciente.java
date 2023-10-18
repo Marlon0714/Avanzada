@@ -19,13 +19,6 @@ import java.util.Set;
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 public class Paciente extends Usuario implements Serializable {
-//    @Id
-//    @EqualsAndHashCode.Include
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @NotNull
-//    @Size(min = 1, max = 20)
-//    @AttributeOverride(name = "idUsuario", column = @Column(name = "id_paciente", unique = true))
-//    private String cedula;
 
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(
@@ -43,6 +36,7 @@ public class Paciente extends Usuario implements Serializable {
     @ManyToOne
     private EPS eps;
 
+    @Size(max = 50)
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo_sangre")
     private TipoSangre tipoSangre;

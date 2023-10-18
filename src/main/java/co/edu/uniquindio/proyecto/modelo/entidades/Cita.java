@@ -40,6 +40,8 @@ public class Cita implements Serializable {
     @Size(max = 255)
     private String motivo;
 
+    @NotNull
+    @Size(max = 50)
     @Enumerated(EnumType.STRING)
     private EstadoCita estado;
 

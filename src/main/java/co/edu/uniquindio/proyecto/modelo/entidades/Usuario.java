@@ -26,6 +26,7 @@ public class Usuario implements Serializable {
 
     @Email
     @NotNull
+    @Size(min = 5, max = 64)
     @Column(unique = true)
     private String email;
 
@@ -36,6 +37,7 @@ public class Usuario implements Serializable {
     @Size(min = 6, max = 64)
     private String password;
 
+    @Size(max = 50)
     @Enumerated(EnumType.STRING)
     private TipoUsuario tipo;
 

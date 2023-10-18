@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class MedicoServicioImpl implements MedicoServicio {
@@ -46,6 +48,11 @@ public class MedicoServicioImpl implements MedicoServicio {
     @Override
     public Medico obtenerMedico(String id) throws Exception{
         return medicoRepo.findById(id).orElseThrow(()-> new Exception("No existe un medico con el id dado"));
+    }
+
+    @Override
+    public List<Medico> listarMedicos() {
+        return medicoRepo.findAll();
     }
 
 }

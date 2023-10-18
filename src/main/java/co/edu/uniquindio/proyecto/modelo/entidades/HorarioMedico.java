@@ -2,6 +2,7 @@ package co.edu.uniquindio.proyecto.modelo.entidades;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class HorarioMedico implements Serializable {
     @Id
     @EqualsAndHashCode.Include
     @NotNull
+    @Size(min = 1, max = 20)
     @Column(name = "id_horario", unique = true)
     private String idHorario;
 
@@ -37,7 +39,7 @@ public class HorarioMedico implements Serializable {
     private LocalDate fechaDiaLibre;
 
     @OneToOne
-    @MapsId
+    @JoinColumn(name = "id_medico")
     private Medico medico;
 
     public HorarioMedico() {

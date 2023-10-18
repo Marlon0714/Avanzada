@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class AlergiaServicioImpl implements AlergiaServicio {
@@ -51,6 +53,11 @@ public class AlergiaServicioImpl implements AlergiaServicio {
     @Override
     public Alergia obtenerAlergia(String id) throws Exception{
         return alergiaRepo.findById(id).orElseThrow(()-> new Exception("No existe una alergia con el id dado"));
+    }
+
+    @Override
+    public List<Alergia> listarAlergias() {
+        return alergiaRepo.findAll();
     }
 
 }

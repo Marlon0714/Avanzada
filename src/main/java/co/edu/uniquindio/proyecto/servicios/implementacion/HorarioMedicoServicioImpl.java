@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class HorarioMedicoServicioImpl implements HorarioMedicoServicio {
@@ -52,5 +54,10 @@ public class HorarioMedicoServicioImpl implements HorarioMedicoServicio {
     @Override
     public HorarioMedico obtenerHorarioMedico(String id) throws Exception{
         return horarioMedicoRepo.findById(id).orElseThrow(()-> new Exception("No existe un horario con el id dado"));
+    }
+
+    @Override
+    public List<HorarioMedico> listarHorariosMedicos() {
+        return horarioMedicoRepo.findAll();
     }
 }

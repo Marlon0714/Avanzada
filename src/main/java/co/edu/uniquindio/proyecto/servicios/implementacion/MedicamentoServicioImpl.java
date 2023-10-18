@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class MedicamentoServicioImpl implements MedicamentoServicio {
@@ -43,5 +45,10 @@ public class MedicamentoServicioImpl implements MedicamentoServicio {
     @Override
     public Medicamento obtenerMedicamento(Long id) throws Exception{
         return medicamentoRepo.findById(id).orElseThrow(()-> new Exception("No existe un medicamento con el id dado"));
+    }
+
+    @Override
+    public List<Medicamento> listarMedicamentos() {
+        return medicamentoRepo.findAll();
     }
 }

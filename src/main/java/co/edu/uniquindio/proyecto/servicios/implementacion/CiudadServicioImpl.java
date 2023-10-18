@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class CiudadServicioImpl implements CiudadServicio {
@@ -52,5 +54,10 @@ public class CiudadServicioImpl implements CiudadServicio {
     @Override
     public Ciudad obtenerCiudad(String id) throws Exception{
         return ciudadRepo.findById(id).orElseThrow(()-> new Exception("No existe una ciudad con el id dado"));
+    }
+
+    @Override
+    public List<Ciudad> listarCiudades() {
+        return ciudadRepo.findAll();
     }
 }

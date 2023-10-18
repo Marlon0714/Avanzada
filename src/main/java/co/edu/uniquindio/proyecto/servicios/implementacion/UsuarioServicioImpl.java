@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -61,5 +62,10 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     @Override
     public Usuario obtenerUsuario(String id) throws Exception{
         return usuarioRepo.findById(id).orElseThrow(()-> new Exception("No existe un usuario con el id dado"));
+    }
+
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepo.findAll();
     }
 }

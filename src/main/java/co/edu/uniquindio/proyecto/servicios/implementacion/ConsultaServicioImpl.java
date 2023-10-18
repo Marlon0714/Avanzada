@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class ConsultaServicioImpl implements ConsultaServicio {
@@ -45,5 +47,10 @@ public class ConsultaServicioImpl implements ConsultaServicio {
     @Override
     public Consulta obtenerConsulta(Long id) throws Exception{
         return consultaRepo.findById(id).orElseThrow(()-> new Exception("No existe una consulta con el id dado"));
+    }
+
+    @Override
+    public List<Consulta> listarConsultas() {
+        return consultaRepo.findAll();
     }
 }

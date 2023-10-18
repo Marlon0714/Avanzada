@@ -16,13 +16,6 @@ import java.util.List;
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 public class Medico extends Usuario implements Serializable {
-//    @Id
-//    @EqualsAndHashCode.Include
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @NotNull
-//    @Size(min = 1, max = 20)
-//    @AttributeOverride(name = "idUsuario", column = @Column(name = "id_medico", unique = true))
-//    private String idMedico;
 
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(

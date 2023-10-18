@@ -2,6 +2,7 @@ package co.edu.uniquindio.proyecto.modelo.entidades;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,9 +32,11 @@ public class PQRS implements Serializable {
     @Column(length = 500)
     private String detalle;
 
+    @Size(max = 50)
     @Enumerated(EnumType.STRING)
     private EstadoPQRS estado;
 
+    @Size(max = 50)
     @Enumerated(EnumType.STRING)
     private TipoPQRS tipo;
 

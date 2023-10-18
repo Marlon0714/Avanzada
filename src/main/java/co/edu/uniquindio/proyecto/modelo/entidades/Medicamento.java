@@ -27,7 +27,7 @@ public class Medicamento implements Serializable {
     @Column(length = 100)
     private String nombre;
 
-    @Column(length = 200)
+    @Column(length = 100)
     private String descripcion;
 
     @ManyToMany(mappedBy = "medicamentos")

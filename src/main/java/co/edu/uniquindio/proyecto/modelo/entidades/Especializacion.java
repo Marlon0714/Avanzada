@@ -1,6 +1,8 @@
 package co.edu.uniquindio.proyecto.modelo.entidades;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
@@ -22,7 +24,9 @@ public class Especializacion implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
     @NotNull
-    @Size(min = 1, max = 50)
+    //@Size(min = 1, max = 50)
+    @Min(value = 1, message = "El mínimo es 1")
+    @Max(value = 50, message = "El máximo es 50")
     @Column(name = "id_especializacion", unique = true, length = 50)
     private Long idEspecializacion;
 

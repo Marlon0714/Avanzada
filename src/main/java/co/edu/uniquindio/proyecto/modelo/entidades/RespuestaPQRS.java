@@ -22,7 +22,7 @@ import java.time.LocalTime;
 public class RespuestaPQRS implements Serializable {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     @NotNull
     //@Size(min = 1, max = 10)
     @Min(value = 1, message = "El mínimo es 1")

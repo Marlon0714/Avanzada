@@ -64,4 +64,11 @@ public class PQRSservicioTest {
         Assertions.assertNotNull(pqrs);
     }
 
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarPQRS() {
+        pqrsServicio.listarPQRS().forEach(pqrs -> System.out.println(pqrs.getDetalle()));
+    }
+
 }

@@ -65,5 +65,11 @@ public class EPSServicioTest {
         Assertions.assertNotNull(e);
     }
 
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarEPSs() {
+        epsServicio.listarEPS().forEach(eps -> System.out.println(eps.getNombre()));
+    }
 
 }

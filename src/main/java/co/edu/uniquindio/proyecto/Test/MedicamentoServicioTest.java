@@ -65,4 +65,12 @@ public class MedicamentoServicioTest {
         System.out.println(m.getNombre());
         Assertions.assertNotNull(m);
     }
+
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarMedicamentos(){
+        medicamentoServicio.listarMedicamentos().forEach(medicamento -> System.out.println(medicamento.getNombre()));
+    }
+
 }

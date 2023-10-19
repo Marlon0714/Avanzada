@@ -65,4 +65,11 @@ public class UsuarioServicioTest {
     }
 
 
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarUsuarios() {
+        usuarioServicio.listarUsuarios().forEach(usuario -> System.out.println(usuario.getNombre()));
+    }
+
 }

@@ -60,4 +60,11 @@ public class CiudadServicioTest {
             Assertions.assertEquals("1", c.getIdCiudad());
     }
 
+    //Test para el metodo de listar ciudades
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarCiudades() {
+        ciudadServicio.listarCiudades().forEach(ciudad -> System.out.println(ciudad.getNombre()));
+    }
+
 }

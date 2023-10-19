@@ -80,4 +80,11 @@ public class HorarioMedicoServicioTest {
         Assertions.assertNotNull(horarioMedico);
     }
 
+    //Test para listar los horarios
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarHorariosMedicosTest() {
+        horarioMedicoServicio.listarHorariosMedicos().forEach(horarioMedico -> System.out.println(horarioMedico.getHoraInicio()));
+    }
+
 }

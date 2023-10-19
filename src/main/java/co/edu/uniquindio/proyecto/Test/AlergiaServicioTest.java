@@ -62,4 +62,12 @@ public class AlergiaServicioTest {
         System.out.println(a.getNombre());
         Assertions.assertEquals("Alergia a paracetamol", a.getNombre());
     }
+
+    //Test para el metodo de listar alergias|
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarAlergias() {
+        alergiaServicio.listarAlergias().forEach(alergia -> System.out.println(alergia.getNombre()));
+    }
+
 }

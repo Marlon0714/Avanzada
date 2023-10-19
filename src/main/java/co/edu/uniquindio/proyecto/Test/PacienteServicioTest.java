@@ -66,4 +66,11 @@ public void actualizarPaciente() throws Exception{
         Assertions.assertEquals("Usuario 3",p.getNombre());
     }
 
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarPacientes(){
+        pacienteServicio.listarPacientes().forEach(paciente -> System.out.println(paciente.getNombre()));
+    }
+
 }

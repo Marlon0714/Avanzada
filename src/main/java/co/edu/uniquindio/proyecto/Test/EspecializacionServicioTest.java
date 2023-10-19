@@ -62,4 +62,11 @@ public class EspecializacionServicioTest {
         Assertions.assertNotNull(e);
     }
 
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarEspecializaciones() {
+        especializacionServicio.listarEspecializaciones().forEach(especializacion -> System.out.println(especializacion.getNombre()));
+    }
+
 }

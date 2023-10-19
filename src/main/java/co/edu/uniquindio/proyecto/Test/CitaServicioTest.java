@@ -64,4 +64,12 @@ public class CitaServicioTest {
         System.out.println(c);
         Assertions.assertNotNull(c);
     }
+
+    //Test para el metodo de listar citas
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarCitas(){
+        citaServicio.listarCitas().forEach(cita -> System.out.println(cita.getMotivo()));
+    }
+
 }

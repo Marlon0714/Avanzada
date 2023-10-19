@@ -69,4 +69,11 @@ public class MedicoServicioTest {
         System.out.println(m.getNombre());
         Assertions.assertEquals("Usuario 1",m.getNombre());
     }
+
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarMedicos(){
+        medicoServicio.listarMedicos().forEach(medico -> System.out.println(medico.getNombre()));
+    }
 }

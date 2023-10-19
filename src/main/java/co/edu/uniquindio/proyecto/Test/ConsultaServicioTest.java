@@ -67,5 +67,10 @@ public class ConsultaServicioTest {
         System.out.println(c.getDiagnostico());
         Assertions.assertEquals("Diagnóstico 1", c.getDiagnostico());
     }
-
+    //Test para listar las consultas
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarConsultas() {
+        consultaServicio.listarConsultas().forEach(consulta -> System.out.println(consulta.getDiagnostico()));
+    }
 }

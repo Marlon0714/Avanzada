@@ -72,6 +72,10 @@ public class RespuestaPQRSServicioTest {
         Assertions.assertEquals("Respuesta 1", respuestaPQRS.getDetalle());
     }
 
-
-
+    //Test para listar
+    @Test
+    @Sql("classpath:pruebas.sql")
+    public void listarRespuestaPQRS() {
+        respuestaPQRSServicio.listarRespuestasPQRS().forEach(respuestaPQRS -> System.out.println(respuestaPQRS.getDetalle()));
+    }
 }
